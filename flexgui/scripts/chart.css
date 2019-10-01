@@ -1,0 +1,126 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+
+.wrapper {
+	min-height: 400px;
+	padding: 16px 0;
+	position: relative;
+}
+
+.wrapper.col-2 {
+	display: inline-block;
+	min-height: 256px;
+	width: 49%;
+}
+
+@media (max-width: 400px) {
+	.wrapper.col-2 {
+		width: 100%
+	}
+}
+
+.wrapper canvas {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.chartjs-title {
+	font-size: 2rem;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.chartjs-title::before {
+	background-image: url(logo.svg);
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 40px;
+	content: 'Chart.js | ';
+	color: #f27173;
+	font-weight: 600;
+	padding-left: 48px;
+}
+
+.chartjs-caption {
+	font-size: 1.2rem;
+}
+
+.chartjs-links {
+	display: flex;
+	justify-content: center;
+	padding: 8px 0;
+}
+
+.chartjs-links a {
+	align-items: center;
+	display: flex;
+	font-size: 0.9rem;
+	margin: 0.2rem;
+}
+
+.chartjs-links .fa:before {
+	margin-right: 0.5em;
+}
+
+.samples-category {
+	display: inline-block;
+	margin-bottom: 32px;
+	vertical-align: top;
+	width: 25%;
+}
+
+.samples-category > .title {
+	color: #aaa;
+	font-weight: 300;
+	font-size: 1.5rem;
+}
+
+.samples-category:hover > .title {
+	color: black;
+}
+
+.samples-category > .items {
+	padding: 8px 0;
+}
+
+.samples-entry {
+	padding: 0 0 4px 0;
+}
+
+.samples-entry > .title {
+	font-weight: 700;
+}
+
+@media (max-width: 640px) {
+	.samples-category { width: 33%; }
+}
+
+@media (max-width: 512px) {
+	.samples-category { width: 50%; }
+}
+
+@media (max-width: 420px) {
+	.chartjs-caption { font-size: 1.05rem; }
+	.chartjs-title::before { content: ''; }
+	.chartjs-links a { flex-direction: column; }
+	.chartjs-links .fa { margin: 0 }
+	.samples-category { width: 100%; }
+}
+
+.analyser table {
+	color: #333;
+	font-size: 0.9rem;
+	margin: 8px 0;
+	width: 100%
+}
+
+.analyser th {
+	background-color: #f0f0f0;
+	padding: 2px;
+}
+
+.analyser td {
+	padding: 2px;
+	text-align: center;
+}

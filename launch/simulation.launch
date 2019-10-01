@@ -1,0 +1,18 @@
+<launch>
+    <!-- Start driver notification node -->
+    <node pkg="rosweld_drivers" name="rosweld_drivers" type="logger.sh" output="screen" respawn="true"/>
+    
+    <!-- Start lab control node -->
+    <include ns="move_it_robot" file="$(find rosweld_tools_examples)/launch/lab.launch" />
+
+    <!-- Start move_it_robot node for the simulation -->
+    <include ns="move_it_robot" file="$(find rosweld_drivers)/launch/moveit.launch" >
+        <arg name="robot_name" value="move_it_robot" />
+    </include>
+
+    <!-- Start ROS bridge -->
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+    
+    <!-- Start ROSweld Core -->
+    <include file="$(find rosweld_tools_examples)/launch/core.launch"/>
+</launch>

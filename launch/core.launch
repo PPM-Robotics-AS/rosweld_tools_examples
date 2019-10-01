@@ -1,0 +1,10 @@
+<launch>
+    <node respawn="true" pkg="rosweld_tools" ns="rosweld" name="rosweld_core" type="start.sh" output="screen">
+        <param name="name" value="rosweld"/>
+        <param name="simulation_controller" value="move_it_robot"/>
+        <param name="robot_controller" value="nachi_robot"/>
+        <param name="laser_name" value="laser_scanner"/>
+        <param name="laser_offset" value="[0.105, 0., 0.03]"/>
+        <param name="laser_rotation" value="[0, 0, 0]"/>
+    </node>
+</launch>

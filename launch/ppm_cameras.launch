@@ -1,0 +1,24 @@
+<launch>
+
+  <arg name="fps" default="10" />
+
+  <include file="$(find rosweld_drivers)/launch/camera.launch">
+    <arg name="url" value="http://192.168.1.148/img/video.mjpeg"/>
+    <arg name="topic" value="/camera_image1" />
+    <arg name="fps" value="$(arg fps)" />
+    <arg name="username" value="admin" />
+    <arg name="password" value="admin" />
+    <arg name="name" value="camera1" />
+  </include>
+
+  <include file="$(find rosweld_drivers)/launch/camera.launch">
+    <arg name="url" value="http://192.168.1.151/img/video.mjpeg"/>
+    <arg name="topic" value="/camera_image2" />
+    <arg name="fps" value="$(arg fps)" />
+    <arg name="username" value="admin" />
+    <arg name="password" value="admin" />
+    <arg name="name" value="camera2" />
+  </include>
+
+   <node pkg="mjpeg_server" type="mjpeg_server" name="mjpeg_server" output="screen" respawn="true"/>
+</launch>
